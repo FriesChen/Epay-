@@ -13,17 +13,5 @@ admin
 123456
 
 伪静态
-location / {
- if (!-e $request_filename) {
-   rewrite ^/(.[a-zA-Z0-9\-\_]+).html$ /index.php?mod=$1 last;
- }
- rewrite ^/pay/(.*)$ /pay.php?s=$1 last;
- rewrite ^/api/(.*)$ /api.php?s=$1 last;
- rewrite ^/doc/(.[a-zA-Z0-9\-\_]+).html$ /index.php?doc=$1 last;
-}
-location ^~ /plugins {
-  deny all;
-}
-location ^~ /includes {
-  deny all;
-}
+在网站目录的nginx.txt里面
+
